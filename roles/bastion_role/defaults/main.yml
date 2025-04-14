@@ -1,0 +1,4 @@
+---
+bastion_role_student_name: "{{ student_name | default('instruct') }}"
+bastion_role_huggingface_ro_token: "{{ huggingface_ro_token }}"
+
