@@ -18,3 +18,8 @@
   register: r_ilab_download
   until: r_ilab_download is not failed
 
+- name: Activate virtual environment for {{ bastion_role_student_name }}
+  lineinfile:
+    dest: /home/{{ bastion_role_student_name }}/.bashrc
+    line: "source $HOME/instructlab/venv/bin/activate"
+    owner: "{{ bastion_role_student_name }}"
