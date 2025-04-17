@@ -4,7 +4,7 @@
   ansible.builtin.command: |
     /home/{{ bastion_role_student_name }}/instructlab/venv/bin/ilab config init --non-interactive
 
-- name: Execute ilab command to download {{ item.repository }}/{{ item.filename }}
+- name: Execute ilab command to download models
   become_user: "{{ bastion_role_student_name }}"
   ansible.builtin.command: |
     /home/{{ bastion_role_student_name }}/instructlab/venv/bin/ilab model download --repository={{ item.repository }} --filename={{ item.filename }} --hf-token={{ bastion_role_huggingface_ro_token }}
