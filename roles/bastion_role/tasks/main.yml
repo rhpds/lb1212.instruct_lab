@@ -2,8 +2,7 @@
 - name: Execute ilab command for initial configuration
   become_user: "{{ bastion_role_student_name }}"
   ansible.builtin.command: |
-    source /home/{{ bastion_role_student_name }}/instructlab/venv/bin/activate
-    ilab config init --non-interactive
+    instructlab/venv/bin/ilab config init --non-interactive
 
 - name: Execute ilab command to download Granite
   become_user: "{{ bastion_role_student_name }}"
